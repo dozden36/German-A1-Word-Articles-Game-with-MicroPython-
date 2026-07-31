@@ -74,6 +74,12 @@ def scary_error_animation():
         set_led(20, 0, 0)
         time.sleep(0.05)
 
+def draw_question(article_word, options_text):
+    tft.fill(BLACK)
+    tft.text(article_word, 5, 18, YELLOW)
+    tft.text(options_text, 5, 53, WHITE)
+    tft.show()
+
 def main():
     question_indices = list(range(len(words)))
     shuffle_list(question_indices)
@@ -113,7 +119,6 @@ def main():
         
     tft.fill(BLACK)
     tft.text("Congrats!", 40, 30, GREEN)
-    tft.show()
     set_led(0, 30, 30)
-
+    tft.show()
 main()
